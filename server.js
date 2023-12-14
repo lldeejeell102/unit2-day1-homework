@@ -14,6 +14,13 @@ app.get("/greeting/:name", (req,res) => {
     res.send(`What's up, ${name}! It's so great to see you!`)
 })
 
+app.get("/tip/:total/:tipPercentage", (req,res) => {
+    const total = req.params.total
+    const tipPercentage = req.params.tipPercentage
+    const tip = total * (tipPercentage/100)
+    res.send(`your tip should be ${tip}`)
+})
+
 
 // SERVER LISTENER
 //**************************************************************************************//
